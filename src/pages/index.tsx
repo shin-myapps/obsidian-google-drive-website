@@ -1,11 +1,12 @@
 import Head from 'next/head';
-import { globalRefreshToken } from '@/helpers/state';
+import { globalAccessToken, globalRefreshToken } from '@/helpers/state';
 import React, { useEffect } from 'react';
 import { FaCopy } from 'react-icons/fa';
 import { Persistence } from '@hookstate/persistence';
 import { useHookstate } from '@hookstate/core';
 import { Input, success } from '@richardx/components';
 import Link from 'next/link';
+import { getRootFolderId } from '@/helpers/drive';
 
 const Home: React.FC<{}> = () => {
   const refreshToken = useHookstate(globalRefreshToken);
@@ -17,6 +18,8 @@ const Home: React.FC<{}> = () => {
 
   useEffect(() => {
     globalRefreshToken.attach(Persistence('refreshToken'));
+    globalAccessToken.attach(Persistence('accessToken'));
+    if (globalRefreshToken.value) getRootFolderId();
   }, []);
 
   return (
