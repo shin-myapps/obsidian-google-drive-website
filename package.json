@@ -1,0 +1,39 @@
+{
+  "name": "obsidian-google-drive",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "build-analyze": "ANALYZE=true yarn build && next-chunk-labeler",
+    "start": "next start",
+    "lint": "next lint",
+    "postinstall": "patch-package",
+    "pp": "patch-package"
+  },
+  "dependencies": {
+    "@hookstate/core": "3.0.13",
+    "@hookstate/persistence": "^3.0.1",
+    "@mantine/hooks": "^6.0.17",
+    "@richardx/components": "^0.4.2",
+    "@types/node": "20.4.5",
+    "@types/react": "18.2.16",
+    "@types/react-dom": "18.2.7",
+    "autoprefixer": "10.4.14",
+    "classnames": "^2.3.2",
+    "eslint": "8.45.0",
+    "eslint-config-next": "13.4.12",
+    "ky": "^0.33.3",
+    "next": "13.4.12",
+    "postcss": "8.4.27",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.10.1",
+    "tailwindcss": "3.3.3",
+    "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "@next/bundle-analyzer": "^13.4.12",
+    "next-chunk-labeler": "^1.0.0"
+  }
+}
