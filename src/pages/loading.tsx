@@ -1,7 +1,6 @@
 import { createState } from '@hookstate/core';
 import React, { useEffect } from 'react';
 import ky from 'ky';
-import { clientId, clientSecret } from '@/helpers/constants';
 import { globalAccessToken, globalRefreshToken } from '@/helpers/state';
 import Head from 'next/head';
 import { getRootFolderId } from '@/helpers/drive';
@@ -15,14 +14,8 @@ const Loading: React.FC = () => {
 
     try {
       const { access_token, refresh_token, expires_in } = await ky
-        .post('https://oauth2.googleapis.com/token', {
-          json: {
-            client_id: clientId,
-            client_secret: clientSecret,
-            code,
-            grant_type: 'authorization_code',
-            redirect_uri: location.origin + '/loading',
-          },
+        .post('/api/tokens', {
+          json: { code },
         })
         .json<any>();
       globalAccessToken.set({

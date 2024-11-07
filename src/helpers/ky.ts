@@ -1,7 +1,6 @@
 import ky, { Hooks } from 'ky';
 import { globalAccessToken, globalRefreshToken } from './state';
 import { error } from '@richardx/components';
-import { clientId, clientSecret } from './constants';
 
 const hooks: Hooks = {
   beforeRequest: [
@@ -37,13 +36,8 @@ export const drive = ky.extend({
 const refreshAccessToken = async () => {
   try {
     const { expires_in, access_token } = await ky
-      .post('https://oauth2.googleapis.com/token', {
-        json: {
-          client_id: clientId,
-          client_secret: clientSecret,
-          grant_type: 'refresh_token',
-          refresh_token: globalRefreshToken.value,
-        },
+      .post('/api/access', {
+        json: { refresh_token: globalRefreshToken.value },
       })
       .json<any>();
 
