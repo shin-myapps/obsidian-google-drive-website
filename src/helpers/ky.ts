@@ -1,5 +1,5 @@
 import ky, { Hooks } from 'ky';
-import { globalAccessToken, globalUser } from './state';
+import { globalAccessToken, globalRefreshToken } from './state';
 import { error } from '@richardx/components';
 import { clientId, clientSecret } from './constants';
 
@@ -34,11 +34,6 @@ export const drive = ky.extend({
   hooks,
 });
 
-export const googlePhotos = ky.extend({
-  prefixUrl: 'https://photoslibrary.googleapis.com/v1',
-  hooks,
-});
-
 const refreshAccessToken = async () => {
   try {
     const { expires_in, access_token } = await ky
@@ -47,7 +42,7 @@ const refreshAccessToken = async () => {
           client_id: clientId,
           client_secret: clientSecret,
           grant_type: 'refresh_token',
-          refresh_token: globalUser.value.refreshToken,
+          refresh_token: globalRefreshToken.value,
         },
       })
       .json<any>();
@@ -57,12 +52,7 @@ const refreshAccessToken = async () => {
       expiresAt: Date.now() + expires_in * 1000,
     });
   } catch (e: any) {
-    globalUser.set({
-      email: '',
-      name: '',
-      picture: '',
-      refreshToken: '',
-    });
+    globalRefreshToken.set('');
     globalAccessToken.set({ token: '', expiresAt: 0 });
     location.href = location.origin + '?error=Please log in again';
   }
