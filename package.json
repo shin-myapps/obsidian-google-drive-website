@@ -7,9 +7,7 @@
     "build": "next build",
     "build-analyze": "ANALYZE=true yarn build && next-chunk-labeler",
     "start": "next start",
-    "lint": "next lint",
-    "postinstall": "patch-package",
-    "pp": "patch-package"
+    "lint": "next lint"
   },
   "dependencies": {
     "@hookstate/core": "3.0.13",
