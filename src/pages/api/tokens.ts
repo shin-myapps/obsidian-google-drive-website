@@ -15,6 +15,7 @@ export default async function handler(
         client_secret: process.env.NEXT_PUBLIC_CLIENT_SECRET,
         code: req.body.code,
         grant_type: 'authorization_code',
+        redirect_uri: req.headers.origin + '/loading',
       },
     })
     .json<any>();
