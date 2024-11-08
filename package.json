@@ -19,6 +19,7 @@
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.14",
     "classnames": "^2.3.2",
+    "cors": "^2.8.5",
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.12",
     "ky": "^0.33.3",
@@ -32,6 +33,7 @@
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^13.4.12",
+    "@types/cors": "^2.8.17",
     "next-chunk-labeler": "^1.0.0"
   }
 }
