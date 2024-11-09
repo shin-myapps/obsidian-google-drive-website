@@ -46,7 +46,7 @@ const Loading: React.FC = () => {
   return (
     <>
       <Head>
-        <title>Loading | Daily Journal</title>
+        <title>Loading | Obsidian Google Drive</title>
       </Head>
       <main>
         <div className='w-full h-full absolute left-0 top-0 flex items-center justify-center flex-col gap-4'>

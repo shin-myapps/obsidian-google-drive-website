@@ -10,10 +10,10 @@ const PrivacyPolicy: React.FC = () => {
       <h1 className='text-4xl'>Privacy Policy for Obsidian Google Drive</h1>
       <p>Effective Date: November 7, 2024</p>
       <p>
-        Thank you for using Daily Journal. This Privacy Policy outlines how your
-        personal information is collected, used, and protected when you use the
-        App. By using the App, you agree to the practices described in this
-        policy.
+        Thank you for using Obsidian Google Drive. This Privacy Policy outlines
+        how your personal information is collected, used, and protected when you
+        use the App. By using the App, you agree to the practices described in
+        this policy.
       </p>
       <h2 className='text-2xl'>
         1. Information We Collect but do not Personally Store
