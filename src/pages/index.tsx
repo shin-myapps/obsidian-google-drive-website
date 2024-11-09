@@ -80,7 +80,8 @@ const Home: React.FC<{}> = () => {
             files, move them to another vault and copy them back in after
             syncing. If there is no Google Drive vault, the plugin will create
             one and delete the contents of the local vault. This is ONLY on the
-            first activation of the plugin on a vault.
+            first activation of the plugin on a vault or when the client is
+            behind Google Drive's files.
           </p>
         </div>
       </div>
