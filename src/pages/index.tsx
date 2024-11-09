@@ -54,7 +54,7 @@ const Home: React.FC<{}> = () => {
             larger, more complicated system. Our sync plugin allows you to sync
             between multiple devices through Google Drive and store the vault
             there. The steps to use this plugin are shown underneath the
-            disclaimers.
+            disclaimers. This does NOT sync your <i>.obsidian</i> folder.
           </p>
           <p className='md:w-[600px]'>
             <b>Discloser</b>: Obsidian Google Drive is <b>not</b> an official
@@ -74,12 +74,13 @@ const Home: React.FC<{}> = () => {
             track these changes.
           </p>
           <p className='md:w-[600px]'>
-            <b>Discloser 3</b>: Activating this plugin on a vault will{' '}
-            <b>delete all local files in the vault</b> and replace them with the
-            files on Google Drive. If you wish to keep those files, move them to
-            another vault and copy them back in after syncing. If there is no
-            Google Drive vault, the plugin will create one and delete the
-            contents of the local vault.
+            <b>Discloser 3</b>: <b>Initial</b> activation of this plugin on a
+            vault will <b>delete all local files in the vault</b> and replace
+            them with the files on Google Drive. If you wish to keep those
+            files, move them to another vault and copy them back in after
+            syncing. If there is no Google Drive vault, the plugin will create
+            one and delete the contents of the local vault. This is ONLY on the
+            first activation of the plugin on a vault.
           </p>
         </div>
       </div>
