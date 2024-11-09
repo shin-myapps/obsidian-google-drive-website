@@ -81,7 +81,7 @@ const Home: React.FC<{}> = () => {
             syncing. If there is no Google Drive vault, the plugin will create
             one and delete the contents of the local vault. This is ONLY on the
             first activation of the plugin on a vault or when the client is
-            behind Google Drive's files.
+            behind Google Drive&apos;s files.
           </p>
         </div>
       </div>
@@ -121,9 +121,9 @@ const Home: React.FC<{}> = () => {
               vault. To sync changes from the local vault to Google Drive, press
               the sync button, and it will begin syncing. While you do not have
               to sync before you close Obsidian, we suggest doing so to ensure
-              that the vault is up to date, as if another device syncs to the
-              vault, it will delete local changes the next time Obsidian is
-              opened.{' '}
+              that the vault is up to date. If a device syncs to Google Drive,
+              other devices will delete their local changes the next time they
+              open Obsidian.{' '}
               <b>
                 Make sure to sync with an adequate internet connection as
                 closing the app or losing connection while syncing could lead to
