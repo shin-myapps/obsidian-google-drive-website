@@ -97,7 +97,7 @@ const Home: React.FC<{}> = () => {
           </div>
           <img
             src='/token.webp'
-            alt='Home'
+            alt='Refresh Token'
             className='w-56 rounded-md shadow-lg shadow-black/40 dark:shadow-white/40'
           />
         </div>
@@ -106,7 +106,7 @@ const Home: React.FC<{}> = () => {
         <div className='hero-content flex-col md:flex-row text-center md:text-left md:gap-12'>
           <img
             src='/sync.webp'
-            alt='Template'
+            alt='Sync'
             className='w-56 rounded-md shadow-lg shadow-black/40 dark:shadow-white/40'
           />
           <div className='flex flex-col items-center md:items-start gap-4'>
@@ -129,6 +129,35 @@ const Home: React.FC<{}> = () => {
               </b>
             </p>
           </div>
+        </div>
+      </div>
+      <div className='hero bg-teal-300/30 dark:bg-teal-900/30 py-12 px-8'>
+        <div className='hero-content flex-col md:flex-row text-center md:text-left md:gap-12'>
+          <div className='flex flex-col items-center md:items-start gap-4'>
+            <h2 className='text-3xl font-bold'>Github</h2>
+            <p className='md:w-[400px]'>
+              If you want, you can check out the source code for this plugin{' '}
+              <Link
+                href='https://github.com/RichardX366/Obsidian-Google-Drive'
+                className='underline'
+              >
+                here
+              </Link>
+              . You can also check out the source code for this website{' '}
+              <Link
+                href='https://github.com/RichardX366/Obsidian-Google-Drive-Website'
+                className='underline'
+              >
+                here
+              </Link>
+              !
+            </p>
+          </div>
+          <img
+            src='/github.webp'
+            alt='Github'
+            className='w-56 h-w-56 rounded-full shadow-lg shadow-black/40 dark:shadow-white/40'
+          />
         </div>
       </div>
       <footer className='footer footer-center p-4 bg-base-300 text-base-content'>
