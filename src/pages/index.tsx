@@ -47,24 +47,88 @@ const Home: React.FC<{}> = () => {
         <div className='hero-content flex-col'>
           <h2 className='text-4xl font-bold'>Obsidian Google Drive</h2>
           <p className='md:w-[600px]'>
-            Daily journal is an app that lets you log your day-to-day life in a
-            quick and easy way. All your entries are stored on Google Drive, so
-            however much your drive can store is however long you can journal
-            for. You can also look through compilations of images over time.
-            Navigate by clicking on your profile after logging in.
+            Obsidian Google Drive is a plugin that lets you sync your Obsidian
+            vault to Google Drive. This was created because iOS does not sync
+            with cloud providers well, apart from Obsidian Sync, and the plugins
+            that currently work with Google Drive paid or are part of some
+            larger, more complicated system. Our sync plugin allows you to sync
+            between multiple devices through Google Drive and store the vault
+            there. The steps to use this plugin are shown underneath the
+            disclaimers.
           </p>
           <p className='md:w-[600px]'>
-            <b>Discloser</b>: Daily Journal&apos;s use and transfer to any other
-            app of information received from Google APIs will adhere to{' '}
-            <Link
-              href='https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes'
-              className='underline'
-              target='_blank'
-            >
-              Google API Services User Data Policy
-            </Link>
-            , including the Limited Use requirements.
+            <b>Discloser</b>: Obsidian Google Drive is <b>not</b> an official
+            plugin maintained by the Obsidian developers. This is a
+            community-made plugin meant to simply add some functionality. Use
+            this at your own risk, and make sure to back up your vaults!
           </p>
+          <p className='md:w-[600px]'>
+            <b>Discloser 2</b>: Do <b>not</b> manually upload files into the
+            generated Obsidian Google Drive folder or use some other method of
+            Google Drive sync. Our plugin cannot see these files, and it will
+            likely break functionality, potentially causing data loss. Instead,
+            use this plugin on any device you wish to sync the vault between.
+            Also do <b>not</b> manually change files outside of the Obsidian
+            app. Our plugin tracks file changes through the Obsidian API, and if
+            you change files outside of the app, the plugin will not be able to
+            track these changes.
+          </p>
+          <p className='md:w-[600px]'>
+            <b>Discloser 3</b>: Activating this plugin on a vault will{' '}
+            <b>delete all local files in the vault</b> and replace them with the
+            files on Google Drive. If you wish to keep those files, move them to
+            another vault and copy them back in after syncing. If there is no
+            Google Drive vault, the plugin will create one and delete the
+            contents of the local vault.
+          </p>
+        </div>
+      </div>
+      <div className='hero bg-blue-300/30 dark:bg-blue-900/30 py-12 px-8'>
+        <div className='hero-content flex-col md:flex-row text-center md:text-left md:gap-12'>
+          <div className='flex flex-col items-center md:items-start gap-4'>
+            <h2 className='text-3xl font-bold'>Refresh Token</h2>
+            <p className='md:w-[400px]'>
+              Obsidian Google Drive communicates with Google Drive using a
+              refresh token. To get this token, sign in on the website (top
+              right), and copy the token this website returns. Then, go into the
+              Obsidian plugin settings and paste the token into the refresh
+              token field. Reload the Obsidian app after doing this.
+            </p>
+          </div>
+          <img
+            src='/token.webp'
+            alt='Home'
+            className='w-56 rounded-md shadow-lg shadow-black/40 dark:shadow-white/40'
+          />
+        </div>
+      </div>
+      <div className='hero bg-purple-300/30 dark:bg-purple-900/30 py-12 px-8'>
+        <div className='hero-content flex-col md:flex-row text-center md:text-left md:gap-12'>
+          <img
+            src='/sync.webp'
+            alt='Template'
+            className='w-56 rounded-md shadow-lg shadow-black/40 dark:shadow-white/40'
+          />
+          <div className='flex flex-col items-center md:items-start gap-4'>
+            <h2 className='text-3xl font-bold'>Syncing</h2>
+            <p className='md:w-[400px]'>
+              Whenever you open Obsidian, the plugin will check for changes on
+              Google Drive, and if there are any, it will set the local vault to
+              the state of the Google Drive vault. This means that the plugin
+              will prioritize changes on Google Drive over changes on the local
+              vault. To sync changes from the local vault to Google Drive, press
+              the sync button, and it will begin syncing. While you do not have
+              to sync before you close Obsidian, we suggest doing so to ensure
+              that the vault is up to date, as if another device syncs to the
+              vault, it will delete local changes the next time Obsidian is
+              opened.{' '}
+              <b>
+                Make sure to sync with an adequate internet connection as
+                closing the app or losing connection while syncing could lead to
+                data corruption.
+              </b>
+            </p>
+          </div>
         </div>
       </div>
       <footer className='footer footer-center p-4 bg-base-300 text-base-content'>
