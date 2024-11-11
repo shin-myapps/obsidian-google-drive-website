@@ -77,7 +77,7 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <div className='fixed z-10 left-0 top-0 w-full p-4 dark:bg-slate-900 bg-slate-300 border-b dark:border-b-slate-500 border-b-slate-900 flex justify-between gap-2 items-center h-20'>
         <Link href='/' className='text-3xl whitespace-nowrap'>
-          Obsidian G-Drive
+          OGD Sync
         </Link>
         {refreshToken.value ? (
           <button
