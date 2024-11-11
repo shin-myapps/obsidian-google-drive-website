@@ -5,20 +5,20 @@ const PrivacyPolicy: React.FC = () => {
   return (
     <>
       <Head>
-        <title>Privacy Policy | Obsidian Google Drive</title>
+        <title>Privacy Policy | OGD Sync</title>
       </Head>
-      <h1 className='text-4xl'>Privacy Policy for Obsidian Google Drive</h1>
+      <h1 className='text-4xl'>Privacy Policy for OGD Sync</h1>
       <p>Effective Date: November 7, 2024</p>
       <p>
-        Thank you for using Obsidian Google Drive. This Privacy Policy outlines
-        how your personal information is collected, used, and protected when you
-        use the App. By using the App, you agree to the practices described in
-        this policy.
+        Thank you for using OGD Sync. This Privacy Policy outlines how your
+        personal information is collected, used, and protected when you use the
+        App. By using the App, you agree to the practices described in this
+        policy.
       </p>
       <h2 className='text-2xl'>
         1. Information We Collect but do not Personally Store
       </h2>
-      <p>The Obsidian Google Drive App collects the following information:</p>
+      <p>The OGD Sync App collects the following information:</p>
       <ul>
         <li>
           <strong>Uploaded Files</strong>: We upload your Obsidian vault to YOUR
@@ -48,9 +48,8 @@ const PrivacyPolicy: React.FC = () => {
       </ul>
       <h2 className='text-2xl'>4. Data Access</h2>
       <p>
-        The Obsidian Google Drive creators do not have access to the content of
-        your files on Google Drive. Your data remains private and inaccessible
-        to us.
+        The OGD Sync creators do not have access to the content of your files on
+        Google Drive. Your data remains private and inaccessible to us.
       </p>
       <h2 className='text-2xl'>5. Third-Party Services</h2>
       <p>
@@ -82,13 +81,13 @@ const PrivacyPolicy: React.FC = () => {
         contact us at richard134x@gmail.com.
       </p>
       <p>
-        By using the Obsidian Google Drive app, you acknowledge and agree to the
-        terms outlined in this Privacy Policy. Please read the policy carefully
-        and use the app responsibly.
+        By using the OGD Sync app, you acknowledge and agree to the terms
+        outlined in this Privacy Policy. Please read the policy carefully and
+        use the app responsibly.
       </p>
       <p>
-        Thank you for trusting the Obsidian Google Drive App to safeguard your
-        personal information and enhance your Obsidian experience.
+        Thank you for trusting the OGD Sync App to safeguard your personal
+        information and enhance your Obsidian experience.
       </p>
     </>
   );

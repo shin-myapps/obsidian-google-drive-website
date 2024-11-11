@@ -25,7 +25,7 @@ const Home: React.FC<{}> = () => {
   return (
     <>
       <Head>
-        <title>Obsidian Google Drive</title>
+        <title>OGD Sync</title>
       </Head>
       {refreshToken.value && (
         <div className='hero bg-red-300/30 dark:bg-red-900/30 py-12 px-8'>
@@ -45,32 +45,32 @@ const Home: React.FC<{}> = () => {
       )}
       <div className='hero bg-gray-200/30 dark:bg-gray-900 py-24 px-8 text-center'>
         <div className='hero-content flex-col'>
-          <h2 className='text-4xl font-bold'>Obsidian Google Drive</h2>
+          <h2 className='text-4xl font-bold'>OGD Sync</h2>
           <p className='md:w-[600px]'>
-            Obsidian Google Drive is a plugin that lets you sync your Obsidian
-            vault to Google Drive. This was created because iOS does not sync
-            with cloud providers well, apart from Obsidian Sync, and the plugins
-            that currently work with Google Drive paid or are part of some
-            larger, more complicated system. Our sync plugin allows you to sync
-            between multiple devices through Google Drive and store the vault
-            there. The steps to use this plugin are shown underneath the
-            disclaimers. This does NOT sync your <i>.obsidian</i> folder.
+            OGD Sync is a plugin that lets you sync your Obsidian vault to
+            Google Drive. This was created because iOS does not sync with cloud
+            providers well, apart from Obsidian Sync, and the plugins that
+            currently work with Google Drive paid or are part of some larger,
+            more complicated system. Our sync plugin allows you to sync between
+            multiple devices through Google Drive and store the vault there. The
+            steps to use this plugin are shown underneath the disclaimers. This
+            does NOT sync your <i>.obsidian</i> folder.
           </p>
           <p className='md:w-[600px]'>
-            <b>Discloser</b>: Obsidian Google Drive is <b>not</b> an official
-            plugin maintained by the Obsidian developers. This is a
-            community-made plugin meant to simply add some functionality. Use
-            this at your own risk, and make sure to back up your vaults!
+            <b>Discloser</b>: OGD Sync is <b>not</b> an official plugin
+            maintained by the Obsidian developers. This is a community-made
+            plugin meant to simply add some functionality. Use this at your own
+            risk, and make sure to back up your vaults!
           </p>
           <p className='md:w-[600px]'>
             <b>Discloser 2</b>: Do <b>not</b> manually upload files into the
-            generated Obsidian Google Drive folder or use some other method of
-            Google Drive sync. Our plugin cannot see these files, and it will
-            likely break functionality, potentially causing data loss. Instead,
-            use this plugin on any device you wish to sync the vault between.
-            Also do <b>not</b> manually change files outside of the Obsidian
-            app. Our plugin tracks file changes through the Obsidian API, and if
-            you change files outside of the app, the plugin will not be able to
+            generated OGD Sync folder or use some other method of Google Drive
+            sync. Our plugin cannot see these files, and it will likely break
+            functionality, potentially causing data loss. Instead, use this
+            plugin on any device you wish to sync the vault between. Also do{' '}
+            <b>not</b> manually change files outside of the Obsidian app. Our
+            plugin tracks file changes through the Obsidian API, and if you
+            change files outside of the app, the plugin will not be able to
             track these changes.
           </p>
           <p className='md:w-[600px]'>
@@ -90,11 +90,11 @@ const Home: React.FC<{}> = () => {
           <div className='flex flex-col items-center md:items-start gap-4'>
             <h2 className='text-3xl font-bold'>Refresh Token</h2>
             <p className='md:w-[400px]'>
-              Obsidian Google Drive communicates with Google Drive using a
-              refresh token. To get this token, sign in on the website (top
-              right), and copy the token this website returns. Then, go into the
-              Obsidian plugin settings and paste the token into the refresh
-              token field. Reload the Obsidian app after doing this.
+              OGD Sync communicates with Google Drive using a refresh token. To
+              get this token, sign in on the website (top right), and copy the
+              token this website returns. Then, go into the Obsidian plugin
+              settings and paste the token into the refresh token field. Reload
+              the Obsidian app after doing this.
             </p>
           </div>
           <img
