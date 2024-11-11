@@ -50,51 +50,36 @@ const Home: React.FC<{}> = () => {
             OGD Sync is a plugin that lets you sync your Obsidian vault to
             Google Drive. This was created because iOS does not sync with cloud
             providers well, apart from Obsidian Sync, and the plugins that
-            currently work with Google Drive paid or are part of some larger,
+            currently work with Google Drive are paid or part of some larger,
             more complicated system. Our sync plugin allows you to sync between
-            multiple devices through Google Drive and store the vault there. The
-            steps to use this plugin are shown underneath the disclaimers. This
-            does NOT sync your <i>.obsidian</i> folder.
+            multiple devices through Google Drive and store your vault there.
+            You retain a local copy of the vault on whichever devices you use,
+            and your data never reaches our eyes. It is safely stored on your
+            devices and Google Drive, and our servers only serve as a way to
+            exchange refresh keys for access keys (your data never passes
+            through our servers). Please read the instructions below as well as
+            the <b>WARNING</b>!
           </p>
           <p className='md:w-[600px]'>
-            <b>Discloser</b>: OGD Sync is <b>not</b> an official plugin
-            maintained by the Obsidian developers. This is a community-made
-            plugin meant to simply add some functionality. Use this at your own
-            risk, and make sure to back up your vaults!
-          </p>
-          <p className='md:w-[600px]'>
-            <b>Discloser 2</b>: Do <b>not</b> manually upload files into the
-            generated OGD Sync folder or use some other method of Google Drive
-            sync. Our plugin cannot see these files, and it will likely break
-            functionality, potentially causing data loss. Instead, use this
-            plugin on any device you wish to sync the vault between. Also do{' '}
-            <b>not</b> manually change files outside of the Obsidian app. Our
-            plugin tracks file changes through the Obsidian API, and if you
-            change files outside of the app, the plugin will not be able to
-            track these changes.
-          </p>
-          <p className='md:w-[600px]'>
-            <b>Discloser 3</b>: <b>Initial</b> activation of this plugin on a
-            vault will <b>delete all local files in the vault</b> and replace
-            them with the files on Google Drive. If you wish to keep those
-            files, move them to another vault and copy them back in after
-            syncing. If there is no Google Drive vault, the plugin will create
-            one and delete the contents of the local vault. This is ONLY on the
-            first activation of the plugin on a vault or when the client is
-            behind Google Drive&apos;s files.
+            <b>Note</b>: OGD Sync is <b>not</b> an official plugin maintained by
+            the Obsidian developers. This is a community-made plugin meant to
+            simply add some functionality. Use this at your own risk, and make
+            sure to back up your vaults! This plugin also only syncs files and
+            folders, not the <i>.obsidian</i> config folder.
           </p>
         </div>
       </div>
-      <div className='hero bg-blue-300/30 dark:bg-blue-900/30 py-12 px-8'>
+      <div className='hero bg-sky-300/30 dark:bg-sky-900/30 py-12 px-8'>
         <div className='hero-content flex-col md:flex-row text-center md:text-left md:gap-12'>
           <div className='flex flex-col items-center md:items-start gap-4'>
-            <h2 className='text-3xl font-bold'>Refresh Token</h2>
+            <h2 className='text-3xl font-bold'>Setup</h2>
             <p className='md:w-[400px]'>
               OGD Sync communicates with Google Drive using a refresh token. To
               get this token, sign in on the website (top right), and copy the
               token this website returns. Then, go into the Obsidian plugin
-              settings and paste the token into the refresh token field. Reload
-              the Obsidian app after doing this.
+              settings and paste the token into the refresh token field. Make
+              sure the vault you&apos;re syncing into is empty. Then, reload the
+              Obsidian app.
             </p>
           </div>
           <img
@@ -107,23 +92,59 @@ const Home: React.FC<{}> = () => {
       <div className='hero bg-purple-300/30 dark:bg-purple-900/30 py-12 px-8'>
         <div className='hero-content flex-col md:flex-row text-center md:text-left md:gap-12'>
           <img
-            src='/sync.webp'
-            alt='Sync'
+            src='/download.webp'
+            alt='Download'
             className='w-56 rounded-md shadow-lg shadow-black/40 dark:shadow-white/40'
           />
           <div className='flex flex-col items-center md:items-start gap-4'>
-            <h2 className='text-3xl font-bold'>Syncing</h2>
+            <h2 className='text-3xl font-bold'>Setup (New Device)</h2>
             <p className='md:w-[400px]'>
-              Whenever you open Obsidian, the plugin will check for changes on
-              Google Drive, and if there are any, it will set the local vault to
-              the state of the Google Drive vault. This means that the plugin
-              will prioritize changes on Google Drive over changes on the local
-              vault. To sync changes from the local vault to Google Drive, press
-              the sync button, and it will begin syncing. While you do not have
-              to sync before you close Obsidian, we suggest doing so to ensure
-              that the vault is up to date. If a device syncs to Google Drive,
-              other devices will delete their local changes the next time they
-              open Obsidian.{' '}
+              If you already used this plugin on a different device and want to
+              sync those notes onto a new one, then you should manually sync the
+              vault the first time. To do this, download the vault from Google
+              Drive, move the contents to an empty local vault, and then sync
+              the vault. This will ensure that the local vault is up to date
+              with the Google Drive vault. You should do this before entering
+              the refresh token. If you want the plugin to run the initial sync
+              (much slower), then just enable the plugin on an empty vault.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className='hero bg-teal-300/30 dark:bg-teal-700/30 py-12 px-8'>
+        <div className='hero-content flex-col md:flex-row text-center md:text-left md:gap-12'>
+          <div className='flex flex-col items-center md:items-start gap-4'>
+            <h2 className='text-3xl font-bold'>Setup (Existing Notes)</h2>
+            <p className='md:w-[400px]'>
+              If you have existing notes that you want to sync to Google Drive,
+              then first move them into a new vault. Follow the above procedures
+              for setup, and then copy the notes back into the vault THROUGH THE
+              OBSIDIAN APP. You MUST do the copying through the Obsidian app, or
+              else the plugin will break.
+            </p>
+          </div>
+          <img
+            src='/obsidian.webp'
+            alt='Obsidian'
+            className='w-56 rounded-md'
+          />
+        </div>
+      </div>
+      <div className='hero bg-indigo-300/30 dark:bg-indigo-900/30 py-12 px-8'>
+        <div className='hero-content flex-col md:flex-row text-center md:text-left md:gap-12'>
+          <img src='/drive.webp' alt='Drive' className='w-56 rounded-md' />
+          <div className='flex flex-col items-center md:items-start gap-4'>
+            <h2 className='text-3xl font-bold'>Syncing (Pull)</h2>
+            <p className='md:w-[400px]'>
+              Whenever you open Obsidian or run the pull command through the
+              command palette, the plugin will check for changes on Google
+              Drive, and if there are any, it will pull those changes. If there
+              are any conflicts, the plugin will have local changes override
+              cloud changes except for file deletion. If a file
+              creation/modification is being pulled with the client having
+              locally deleted the file, the plugin will bring the file back to
+              match the cloud state. You can also revert changes to the cloud
+              state by running the reset command through the command palette.{' '}
               <b>
                 Make sure to sync with an adequate internet connection as
                 closing the app or losing connection while syncing could lead to
@@ -133,7 +154,46 @@ const Home: React.FC<{}> = () => {
           </div>
         </div>
       </div>
-      <div className='hero bg-teal-300/30 dark:bg-teal-900/30 py-12 px-8'>
+      <div className='hero bg-green-300/30 dark:bg-green-700/30 py-12 px-8'>
+        <div className='hero-content flex-col md:flex-row text-center md:text-left md:gap-12'>
+          <div className='flex flex-col items-center md:items-start gap-4'>
+            <h2 className='text-3xl font-bold'>Syncing (Push)</h2>
+            <p className='md:w-[400px]'>
+              To sync changes from the local vault to Google Drive, press the
+              sync button or run the push command through the command palette,
+              and it will begin syncing. While you do not have to sync before
+              you close Obsidian, we suggest doing so to ensure that the vault
+              is up to date. When you try to push, the plugin will first pull
+              changes from the cloud.
+            </p>
+          </div>
+          <img
+            src='/sync.webp'
+            alt='Sync'
+            className='w-56 rounded-md shadow-lg shadow-black/40 dark:shadow-white/40'
+          />
+        </div>
+      </div>
+      <div className='hero bg-violet-300/30 dark:bg-violet-900/30 py-12 px-8'>
+        <div className='hero-content flex-col md:flex-row text-center md:text-left md:gap-12'>
+          <img src='/warning.webp' alt='Warning' className='w-56 rounded-md' />
+          <div className='flex flex-col items-center md:items-start gap-4'>
+            <h2 className='text-3xl font-bold'>Warning</h2>
+            <p className='md:w-[400px]'>
+              Do <b>not</b> manually upload files into the generated OGD Sync
+              folder or use some other method of Google Drive sync. Our plugin
+              cannot see these files, and it will likely break functionality,
+              potentially causing data loss. Instead, use this plugin on any
+              device you wish to sync the vault between. Also do <b>not</b>{' '}
+              manually change files outside of the Obsidian app. Our plugin
+              tracks file changes through the Obsidian API, and if you change
+              files outside of the app, the plugin will not be able to track
+              these changes.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className='hero bg-cyan-300/30 dark:bg-cyan-900/30 py-12 px-8'>
         <div className='hero-content flex-col md:flex-row text-center md:text-left md:gap-12'>
           <div className='flex flex-col items-center md:items-start gap-4'>
             <h2 className='text-3xl font-bold'>Github</h2>
@@ -145,14 +205,16 @@ const Home: React.FC<{}> = () => {
               >
                 here
               </Link>
-              . You can also check out the source code for this website{' '}
+              . Feel free to make suggestions and pull requests! You can also
+              check out the source code for this website{' '}
               <Link
                 href='https://github.com/RichardX366/Obsidian-Google-Drive-Website'
                 className='underline'
               >
                 here
               </Link>
-              !
+              . If you want to verify any of our claims about data security, you
+              can check through both Github repositories to see for yourself.
             </p>
           </div>
           <img
