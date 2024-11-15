@@ -111,7 +111,7 @@ const Home: React.FC<{}> = () => {
           </div>
         </div>
       </div>
-      <div className='hero bg-teal-300/30 dark:bg-teal-700/30 py-12 px-8'>
+      <div className='hero bg-teal-300/30 dark:bg-teal-700/50 py-12 px-8'>
         <div className='hero-content flex-col md:flex-row text-center md:text-left md:gap-12'>
           <div className='flex flex-col items-center md:items-start gap-4'>
             <h2 className='text-3xl font-bold'>Setup (Existing Notes)</h2>
@@ -176,6 +176,46 @@ const Home: React.FC<{}> = () => {
       </div>
       <div className='hero bg-violet-300/30 dark:bg-violet-900/30 py-12 px-8'>
         <div className='hero-content flex-col md:flex-row text-center md:text-left md:gap-12'>
+          <img
+            src='/vaults.webp'
+            alt='Vaults'
+            className='w-56 aspect-square object-cover rounded-full shadow-lg shadow-black/40 dark:shadow-white/40'
+          />
+          <div className='flex flex-col items-center md:items-start gap-4'>
+            <h2 className='text-3xl font-bold'>Multiple Vaults</h2>
+            <p className='md:w-[400px]'>
+              To sync multiple vaults, simply enable the plugin on vaults with
+              different names. Our plugin syncs together vaults that have the
+              same name, so if you want to sync a new device to an existing
+              vault, just make sure the vault has the same name. Feel free to
+              change the name of the Google Drive folder our plugin creates, but
+              we suggest keeping it the same as the vault name to avoid
+              confusion.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className='hero bg-cyan-300/30 dark:bg-cyan-900/30 py-12 px-8'>
+        <div className='hero-content flex-col md:flex-row text-center md:text-left md:gap-12'>
+          <div className='flex flex-col items-center md:items-start gap-4'>
+            <h2 className='text-3xl font-bold'>Renaming Vaults</h2>
+            <p className='md:w-[400px]'>
+              If you are using our plugin to sync, you{' '}
+              <b>cannot directly rename vaults anymore</b>. This is because our
+              plugin uses the name of the vault to properly sync. If you want to
+              change a vault name, create a new vault with the new name, set up
+              its sync, and move the contents <b>through the Obsidian app</b>.
+            </p>
+          </div>
+          <img
+            src='/rename.webp'
+            alt='Rename'
+            className='w-56 h-w-56 rounded-full bg-white shadow-lg shadow-black/40 dark:shadow-white/40'
+          />
+        </div>
+      </div>
+      <div className='hero bg-red-300/30 dark:bg-red-900/30 py-12 px-8'>
+        <div className='hero-content flex-col md:flex-row text-center md:text-left md:gap-12'>
           <img src='/warning.webp' alt='Warning' className='w-56 rounded-md' />
           <div className='flex flex-col items-center md:items-start gap-4'>
             <h2 className='text-3xl font-bold'>Warning</h2>
@@ -193,7 +233,7 @@ const Home: React.FC<{}> = () => {
           </div>
         </div>
       </div>
-      <div className='hero bg-cyan-300/30 dark:bg-cyan-900/30 py-12 px-8'>
+      <div className='hero bg-cyan-300/30 dark:bg-teal-900/60 py-12 px-8'>
         <div className='hero-content flex-col md:flex-row text-center md:text-left md:gap-12'>
           <div className='flex flex-col items-center md:items-start gap-4'>
             <h2 className='text-3xl font-bold'>Github</h2>
