@@ -241,7 +241,7 @@ const Home: React.FC<{}> = () => {
               If you want, you can check out the source code for this plugin{' '}
               <Link
                 href='https://github.com/RichardX366/Obsidian-Google-Drive'
-                className='underline'
+                className='underline font-medium'
               >
                 here
               </Link>
@@ -249,12 +249,16 @@ const Home: React.FC<{}> = () => {
               check out the source code for this website{' '}
               <Link
                 href='https://github.com/RichardX366/Obsidian-Google-Drive-Website'
-                className='underline'
+                className='underline font-medium'
               >
                 here
               </Link>
               . If you want to verify any of our claims about data security, you
-              can check through both Github repositories to see for yourself.
+              can check through both Github repositories to see for yourself. If
+              you don&apos;t trust our servers, you can always host your own
+              with the code provided (steps are not given, but it just involves
+              copying the code, finding a place to host it, and making a Google
+              Cloud project).
             </p>
           </div>
           <img
