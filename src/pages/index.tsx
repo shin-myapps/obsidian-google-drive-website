@@ -52,27 +52,27 @@ const Home: React.FC<{}> = () => {
             providers well, apart from Obsidian Sync, and the plugins that
             currently work with Google Drive are paid or part of some larger,
             more complicated system. Our sync plugin allows you to sync between
-            multiple devices through Google Drive and store your vault there.
-            You retain a local copy of the vault on whichever devices you use,
-            and your data never reaches our eyes. It is safely stored on your
-            devices and Google Drive, and our servers only serve as a way to
-            exchange refresh keys for access keys (your data never passes
-            through our servers). Please read the instructions below as well as
-            the <b>WARNING</b>!
+            multiple devices (Windows, MacOS, and iOS tested) through Google
+            Drive and store your vault there. You retain a local copy of the
+            vault on whichever devices you use, and your data never reaches our
+            eyes. It is safely stored on your devices and Google Drive, and our
+            servers only serve as a way to exchange refresh keys for access keys
+            (your data never passes through our servers). Please read the
+            instructions below as well as the <b>WARNING</b>!
           </p>
           <p className='md:w-[600px]'>
             <b>Note</b>: OGD Sync is <b>not</b> an official plugin maintained by
             the Obsidian developers. This is a community-made plugin meant to
             simply add some functionality. Use this at your own risk, and make
-            sure to back up your vaults! This plugin also only syncs files and
-            folders, not the <i>.obsidian</i> config folder.
+            sure to back up your vaults! This plugin also syncs the{' '}
+            <i>.obsidian</i> config folder. Your data is not E2E encrypted.
           </p>
         </div>
       </div>
       <div className='hero bg-sky-300/30 dark:bg-sky-900/30 py-12 px-8'>
         <div className='hero-content flex-col md:flex-row text-center md:text-left md:gap-12'>
           <div className='flex flex-col items-center md:items-start gap-4'>
-            <h2 className='text-3xl font-bold'>Setup</h2>
+            <h2 className='text-3xl font-bold'>Setup (First Time)</h2>
             <p className='md:w-[400px]'>
               OGD Sync communicates with Google Drive using a refresh token. To
               get this token, sign in on the website (top right), and copy the
@@ -100,13 +100,13 @@ const Home: React.FC<{}> = () => {
             <h2 className='text-3xl font-bold'>Setup (New Device)</h2>
             <p className='md:w-[400px]'>
               If you already used this plugin on a different device and want to
-              sync those notes onto a new one, then you should manually sync the
-              vault the first time. To do this, download the vault from Google
-              Drive, move the contents to an empty local vault, and then sync
-              the vault. This will ensure that the local vault is up to date
-              with the Google Drive vault. You should do this before entering
-              the refresh token. If you want the plugin to run the initial sync
-              (much slower), then just enable the plugin on an empty vault.
+              sync the vault onto a new one, then you should manually sync the
+              vault the first time. To do this, just download the vault from
+              Google Drive and open it in Obsidian (make sure the vault name
+              stays the same). All of your plugins, settings, and notes will
+              carry over. If you want the plugin to run the initial sync (much
+              slower), then just enable the plugin on an empty vault with a
+              matching name.
             </p>
           </div>
         </div>
@@ -118,9 +118,10 @@ const Home: React.FC<{}> = () => {
             <p className='md:w-[400px]'>
               If you have existing notes that you want to sync to Google Drive,
               then first move them into a new vault. Follow the above procedures
-              for setup, and then copy the notes back into the vault THROUGH THE
-              OBSIDIAN APP. You MUST do the copying through the Obsidian app, or
-              else the plugin will break.
+              for setup, and then copy the notes back into the vault through the
+              Obsidian app. We did some experimenting with copying through file
+              explorer while Obsidian was open, and it seemed to work fine, but
+              we still suggest using the app.
             </p>
           </div>
           <img
@@ -143,8 +144,10 @@ const Home: React.FC<{}> = () => {
               cloud changes except for file deletion. If a file
               creation/modification is being pulled with the client having
               locally deleted the file, the plugin will bring the file back to
-              match the cloud state. You can also revert changes to the cloud
-              state by running the reset command through the command palette.{' '}
+              match the cloud state. The plugin prefers cloud changes over local
+              changes for <i>.obsidian</i> configuration files, however. You can
+              also revert changes to the cloud state by running the reset
+              command through the command palette.{' '}
               <b>
                 Make sure to sync with an adequate internet connection as
                 closing the app or losing connection while syncing could lead to
@@ -187,10 +190,10 @@ const Home: React.FC<{}> = () => {
               To sync multiple vaults, simply enable the plugin on vaults with
               different names. Our plugin syncs together vaults that have the
               same name, so if you want to sync a new device to an existing
-              vault, just make sure the vault has the same name. Feel free to
-              change the name of the Google Drive folder our plugin creates, but
-              we suggest keeping it the same as the vault name to avoid
-              confusion.
+              vault, just make sure the vault has the same name. We suggest
+              keeping the name of the Google Drive folder the same as the vault
+              name to avoid confusion, especially for setting up new devices for
+              sync.
             </p>
           </div>
         </div>
@@ -204,7 +207,7 @@ const Home: React.FC<{}> = () => {
               <b>cannot directly rename vaults anymore</b>. This is because our
               plugin uses the name of the vault to properly sync. If you want to
               change a vault name, create a new vault with the new name, set up
-              its sync, and move the contents <b>through the Obsidian app</b>.
+              its sync, and move the contents through the Obsidian app.
             </p>
           </div>
           <img
@@ -224,11 +227,13 @@ const Home: React.FC<{}> = () => {
               folder or use some other method of Google Drive sync. Our plugin
               cannot see these files, and it will likely break functionality,
               potentially causing data loss. Instead, use this plugin on any
-              device you wish to sync the vault between. Also do <b>not</b>{' '}
+              device you wish to sync the vault between. Also be careful about
               manually change files outside of the Obsidian app. Our plugin
               tracks file changes through the Obsidian API, and if you change
-              files outside of the app, the plugin will not be able to track
-              these changes.
+              files outside of the app, the plugin might not be able to track
+              these changes. We did testing on changing files through file
+              explorer while the Obsidian app was open, and it seemed to work
+              fairly well, but we still suggest using the app.
             </p>
           </div>
         </div>
