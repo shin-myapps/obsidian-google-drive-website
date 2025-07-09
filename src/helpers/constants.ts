@@ -1,6 +1,6 @@
 export const scopes = ['https://www.googleapis.com/auth/drive.file'];
 
 export const clientId =
-  '873289301374-t92pvi7grsn2bubatj623m8pof202fdh.apps.googleusercontent.com';
+  '652914244381-hlu6pogp9kohsbkv0aj5oqmtu0ql4gc9.apps.googleusercontent.com';
 
 export const folderMimeType = 'application/vnd.google-apps.folder';
